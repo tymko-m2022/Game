@@ -14,6 +14,8 @@ const bgLvl_1 = new Image();
 bgLvl_1.src = './img/level1.jpg';
 const nextLvl = new Image();
 nextLvl.src = './img/loading.gif'
+const bgLvl_2 = new Image();
+bgLvl_2.src = './img/level2.jpg';
 function startGame() {
    // add LVL selectors
    let minions_1 = document.querySelector("#mob_lvl_1");
@@ -75,7 +77,7 @@ function startGame() {
       wrapper.style.background = `url(${nextLvl.src}) center/contain`;
       indecators.style.opacity = 0;
       setTimeout(()=>{
-         wrapper.style.background = `url(${bgLvl_1.src}) center/contain`;
+         wrapper.style.background = `url(${bgLvl_2.src}) center/contain`;
          indecators.style.opacity = 1;
          minions_2.style.display = "flex";
          minion_4 = new Minion("Oliver", 120, 10);
