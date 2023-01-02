@@ -6,6 +6,7 @@ class Minion{
         this.hp = hp;
         this.current_hp = hp
         this.atack = atack;
+        this.die = false;
     }
 
     addDisplay(lvl){
@@ -13,7 +14,7 @@ class Minion{
         minion.setAttribute("class", "minion");
         minion.setAttribute("id", `minion_${this.name}`);
         minion.innerHTML = `
-            <img class = "img_minion_1" src="./img/${this.name}.png" alt="${this.name}">
+            <img class = "img_${this.name}" src="./img/${this.name}.png" alt="${this.name}">
             <p>
                 ${this.name} 
                 <span class="minion_atack">
@@ -58,7 +59,7 @@ class Minion{
     }
 
     lossAtack(atack, displayHP){
-
+        let minion = document.querySelector(`#minion_${this.name}`)
         if( atack < this.current_hp || this.current_hp > 0){
             this.current_hp -= atack;
             displayHP.setAttribute("value", this.current_hp);
@@ -69,6 +70,8 @@ class Minion{
             user.addAtack(this.atack);
             displayHP.setAttribute("value", 0);
             document.querySelector(`#${this.name}_value_hp`).textContent = 0;
+            this.die = true;
+            minion.classList.add("die")
         }
 
         

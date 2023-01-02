@@ -86,15 +86,70 @@ body{
     justify-content: space-evenly;
 }
 
+.minion{
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDkiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OSA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuMDA1NDE1MjMgMEwzMS42MjgxIDMxLjYyMjZMMzQuMzQyNSAyOC45MTQ0TDEwLjg1MDggMS44MDYyMkwwLjAwNTQxNTIzIDBaIiBmaWxsPSIjQzVDQUU5Ii8+CjxwYXRoIGQ9Ik0wLjAwNTU0MTU4IDBMMzEuNjI4MiAzMS42MjI2TDI4LjkyIDM0LjMzNzFMMS44MTE5MSAxMC44NDUzTDAuMDA1NTQxNTggMFoiIGZpbGw9IiM5RkE4REEiLz4KPHBhdGggZD0iTTI5LjM3MzYgMzkuMzA1TDM5LjMxMDcgMjkuMzY0MkMzOS42NzA4IDI5LjAwNTQgMzkuODczMyAyOC41MTc4IDM5Ljg3MzMgMjguMDA5NEMzOS44NzMzIDI3LjUwMTIgMzkuNjcwOCAyNy4wMTM2IDM5LjMxMDcgMjYuNjU0OEMzOC45NTE5IDI2LjI5NTEgMzguNDY0NiAyNi4wOTI4IDM3Ljk1NjYgMjYuMDkyOEMzNy40NDg1IDI2LjA5MjggMzYuOTYxMiAyNi4yOTUxIDM2LjYwMjUgMjYuNjU0OEwyNi42NjAzIDM2LjU5NTdDMjUuOTMyNCAzNy4zNDgyIDI1Ljk0MjkgMzguNTQ1NiAyNi42ODM4IDM5LjI4NTVDMjcuNDI0NyA0MC4wMjUyIDI4LjYyMTkgNDAuMDM0IDI5LjM3MzYgMzkuMzA1Wk00MS4xMTY5IDQ3LjQzNzJMNDcuNDQyNyA0MS4xMTUxQzQ4LjE5MjMgNDAuMzY3IDQ4LjE5MzQgMzkuMTUyOCA0Ny40NDUzIDM4LjQwMzJDNDYuNjk3IDM3LjY1MzcgNDUuNDgyOSAzNy42NTI1IDQ0LjczMzIgMzguNDAwNkwzOC40MDc0IDQ0LjcyNjRDMzguMDQ3MyA0NS4wODUzIDM3Ljg0NDkgNDUuNTcyOCAzNy44NDQ5IDQ2LjA4MTFDMzcuODQ0OSA0Ni41ODk1IDM4LjA0NzMgNDcuMDc3MSAzOC40MDc0IDQ3LjQzNTlDMzguNzY2MyA0Ny43OTYgMzkuMjUzOCA0Ny45OTg1IDM5Ljc2MjMgNDcuOTk4NUM0MC4yNzA3IDQ3Ljk5ODUgNDAuNzU4MSA0Ny43OTYgNDEuMTE2OSA0Ny40MzU5VjQ3LjQzNzJaIiBmaWxsPSIjRkZCMzAwIi8+CjxwYXRoIGQ9Ik0zNy4wNTExIDMxLjYyMjZMMzQuMzQyOSAzNC4zMzdMNDEuNTcwNiA0MS41NjQ2TDQ0LjI4IDM4Ljg1MTVMMzcuMDUxMSAzMS42MjI2WiIgZmlsbD0iI0VGNkMwMCIvPgo8cGF0aCBkPSJNMzQuMzQyOSAzNC4zMzY5TDMxLjYyODUgMzcuMDQ1TDM4Ljg1NzQgNDQuMjc0TDQxLjU3MDYgNDEuNTY0NUwzNC4zNDI5IDM0LjMzNjlaIiBmaWxsPSIjRDQ0QjAwIi8+Cjwvc3ZnPgo='), auto;
+}
+
+.minion img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+
+#minion_Felix{
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#minion_Wiki{
+    position: relative;
+    top: 70px;
+    
+}
+
+#minion_Oliver{
+    position: relative;
+    top: -20px;
+    left: -180px;
+}
+
+#minion_Charley{
+    position: relative;
+    top: 10px;
+    left: 90px;
+}
+
+p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+#user_atac{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .user_atack{
     position: absolute;
     right: 50px;
     bottom: 50px;
     color: white;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-img{
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
+
+
+.die{
+    pointer-events: none;
+    opacity: .5;
+    filter: grayscale(1);
+}
+
+*{
+    user-select: none;
 }

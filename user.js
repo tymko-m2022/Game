@@ -21,10 +21,10 @@ class User{
             this.current_hp -= atack;
             this.displayHP.setAttribute("value", this.current_hp);
             document.querySelector('#user_value_hp').textContent = this.current_hp;
+            if(this.current_hp <= 0){
+                window.location.reload();
+            }
         }   
-        else{
-            startGame();
-        }
     }
 
     interface(){
@@ -35,6 +35,7 @@ class User{
 
     userAtack(minion){
         minion.lossAtack(this.atack);
+        // add sword animation
     }
 
     addAtack(atack){
