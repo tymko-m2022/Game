@@ -1,0 +1,100 @@
+body{
+    margin: 0 auto;
+    max-width: 1920px;
+}
+
+.game{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./img/start.jpg');
+    background-size: contain;
+    background-position: center;
+}
+
+.start{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    padding: 12px 24px;
+    line-height: 1;
+    font-size: 24px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.btn_start{
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    color: white;
+}
+
+.interface{
+    display: none;
+}
+
+.interface_hp{
+    width: 200px;
+    height: 30px;
+    position: relative;
+}
+
+.interface_hp_user{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+
+.interface_hp progress::-moz-progress-bar { background: red!important; }
+.interface_hp progress::-webkit-progress-value { background: red!important; }
+.interface_hp progress {
+    width: 200px;
+    height: 30px;
+    color: red!important;
+    border-radius: 0;
+}
+
+.interface_hp .hp_metrick{
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.minions{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.user_atack{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    color: white;
+}
+
+img{
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
