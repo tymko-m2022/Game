@@ -6,6 +6,8 @@ class User{
         this.current_hp = hp
         this.atack = atack;
         this.displayHP = document.querySelector("#user_hp");
+        
+        
     }
 
     d_HP(){ 
@@ -35,6 +37,7 @@ class User{
 
     userAtack(minion){
         minion.lossAtack(this.atack);
+        
         // add sword animation
     }
 

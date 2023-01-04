@@ -10,6 +10,7 @@ body{
     background: url('./img/start.jpg');
     background-size: contain;
     background-position: center;
+    overflow: hidden;
 }
 
 .start{
@@ -142,6 +143,24 @@ p{
     font-weight: bold;
 }
 
+.user_sword{
+    position: absolute;
+    right: 60px;
+    bottom: -80px;
+    width: 250px;
+    animation: sword .15s ease-in infinite alternate;
+    transform-origin: 100% 100%;
+    animation-play-state: paused;
+}
+
+@keyframes sword{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-60deg);
+    }
+}
 
 
 .die{
