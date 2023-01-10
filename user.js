@@ -42,7 +42,7 @@ class User{
     }
 
     addAtack(atack){
-        this.atack += atack;
+        this.atack += random(atack);
         document.querySelector('#user_atack').textContent = this.atack;
     }
 }

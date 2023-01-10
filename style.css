@@ -122,6 +122,23 @@ body{
     left: -100px;
 }
 
+#minion_Oskar{
+    position: relative;
+    top: 30px;
+    left: 0px;
+    text-align: center;
+
+}
+#minion_Oskar .interface_hp{
+    margin: auto;
+}
+
+.img_Oskar{
+width: 450px!important;
+height: 400px!important;
+object-position: center;
+}
+
 p{
     color: white;
     font-size: 20px;
@@ -171,4 +188,23 @@ p{
 
 *{
     user-select: none;
+}
+
+.ScoreTable{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+}
+
+.ScoreTable_item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ScoreTable_scores{
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

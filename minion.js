@@ -12,6 +12,8 @@ class Minion{
         this.atackUser = new Audio();
         this.atackUser.src = './audio/userAtack.mp3';
         this.sword = document.querySelector('.user_sword');
+        this.audioMinionDie = new Audio();
+        this.audioMinionDie.src = './audio/mobDie.mp3';
         
     }
 
@@ -82,6 +84,7 @@ class Minion{
             document.querySelector(`#${this.name}_value_hp`).textContent = 0;
             this.die = true;
             minion.classList.add("die")
+            this.audioMinionDie.play();
         }
 
         this.atackUser.play();  
