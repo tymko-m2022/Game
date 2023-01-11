@@ -1,7 +1,20 @@
 body{
     margin: 0 auto;
     max-width: 1920px;
+    animation: hithere .15s ease-in infinite;
+    animation-play-state: paused;
+    overflow: hidden;
 }
+
+@keyframes hithere {
+    30% { transform: scale(1.05); }
+    40%, 60% { transform: rotate(-20deg) scale(1); }
+    50% { transform: rotate(20deg) scale(1.05); }
+    70% { transform: rotate(0deg) scale(1); }
+    100% { transform: scale(1); }
+}
+
+
 
 .game{
     position: relative;
@@ -89,6 +102,14 @@ body{
 
 .minion{
     cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDkiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OSA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuMDA1NDE1MjMgMEwzMS42MjgxIDMxLjYyMjZMMzQuMzQyNSAyOC45MTQ0TDEwLjg1MDggMS44MDYyMkwwLjAwNTQxNTIzIDBaIiBmaWxsPSIjQzVDQUU5Ii8+CjxwYXRoIGQ9Ik0wLjAwNTU0MTU4IDBMMzEuNjI4MiAzMS42MjI2TDI4LjkyIDM0LjMzNzFMMS44MTE5MSAxMC44NDUzTDAuMDA1NTQxNTggMFoiIGZpbGw9IiM5RkE4REEiLz4KPHBhdGggZD0iTTI5LjM3MzYgMzkuMzA1TDM5LjMxMDcgMjkuMzY0MkMzOS42NzA4IDI5LjAwNTQgMzkuODczMyAyOC41MTc4IDM5Ljg3MzMgMjguMDA5NEMzOS44NzMzIDI3LjUwMTIgMzkuNjcwOCAyNy4wMTM2IDM5LjMxMDcgMjYuNjU0OEMzOC45NTE5IDI2LjI5NTEgMzguNDY0NiAyNi4wOTI4IDM3Ljk1NjYgMjYuMDkyOEMzNy40NDg1IDI2LjA5MjggMzYuOTYxMiAyNi4yOTUxIDM2LjYwMjUgMjYuNjU0OEwyNi42NjAzIDM2LjU5NTdDMjUuOTMyNCAzNy4zNDgyIDI1Ljk0MjkgMzguNTQ1NiAyNi42ODM4IDM5LjI4NTVDMjcuNDI0NyA0MC4wMjUyIDI4LjYyMTkgNDAuMDM0IDI5LjM3MzYgMzkuMzA1Wk00MS4xMTY5IDQ3LjQzNzJMNDcuNDQyNyA0MS4xMTUxQzQ4LjE5MjMgNDAuMzY3IDQ4LjE5MzQgMzkuMTUyOCA0Ny40NDUzIDM4LjQwMzJDNDYuNjk3IDM3LjY1MzcgNDUuNDgyOSAzNy42NTI1IDQ0LjczMzIgMzguNDAwNkwzOC40MDc0IDQ0LjcyNjRDMzguMDQ3MyA0NS4wODUzIDM3Ljg0NDkgNDUuNTcyOCAzNy44NDQ5IDQ2LjA4MTFDMzcuODQ0OSA0Ni41ODk1IDM4LjA0NzMgNDcuMDc3MSAzOC40MDc0IDQ3LjQzNTlDMzguNzY2MyA0Ny43OTYgMzkuMjUzOCA0Ny45OTg1IDM5Ljc2MjMgNDcuOTk4NUM0MC4yNzA3IDQ3Ljk5ODUgNDAuNzU4MSA0Ny43OTYgNDEuMTE2OSA0Ny40MzU5VjQ3LjQzNzJaIiBmaWxsPSIjRkZCMzAwIi8+CjxwYXRoIGQ9Ik0zNy4wNTExIDMxLjYyMjZMMzQuMzQyOSAzNC4zMzdMNDEuNTcwNiA0MS41NjQ2TDQ0LjI4IDM4Ljg1MTVMMzcuMDUxMSAzMS42MjI2WiIgZmlsbD0iI0VGNkMwMCIvPgo8cGF0aCBkPSJNMzQuMzQyOSAzNC4zMzY5TDMxLjYyODUgMzcuMDQ1TDM4Ljg1NzQgNDQuMjc0TDQxLjU3MDYgNDEuNTY0NUwzNC4zNDI5IDM0LjMzNjlaIiBmaWxsPSIjRDQ0QjAwIi8+Cjwvc3ZnPgo='), auto;
+    animation: shake .15s ease-in infinite;
+    animation-play-state: paused;
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
 }
 
 .minion img{
@@ -200,6 +221,7 @@ p{
 .ScoreTable_item{
     display: flex;
     justify-content: space-between;
+    padding-right: 20px;
 }
 
 .ScoreTable_scores{
@@ -208,3 +230,25 @@ p{
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.ScoreTable_scores::-webkit-scrollbar {
+    width: 12px;          
+  }
+  
+  .ScoreTable_scores::-webkit-scrollbar-track {
+    background: orange;  
+    border-radius: 20px;    
+  }
+  
+  .ScoreTable_scores::-webkit-scrollbar-thumb {
+    background-color: blue;    
+    border-radius: 20px;       
+    border: 3px solid orange;  
+  }
+
+  .endBlock{
+    position: absolute;
+    inset: auto 0 50px;
+    margin: auto;
+    text-align: center;
+  }

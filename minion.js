@@ -76,6 +76,10 @@ class Minion{
             this.current_hp -= atack;
             displayHP.setAttribute("value", this.current_hp);
             document.querySelector(`#${this.name}_value_hp`).textContent = this.current_hp;
+            minion.style.animationPlayState = 'running';
+            setTimeout(() => {
+                minion.style.animationPlayState = 'paused';
+            }, 150);
         }
 
         if(this.current_hp <= 0){
@@ -83,7 +87,7 @@ class Minion{
             displayHP.setAttribute("value", 0);
             document.querySelector(`#${this.name}_value_hp`).textContent = 0;
             this.die = true;
-            minion.classList.add("die")
+            minion.classList.add("die");
             this.audioMinionDie.play();
         }
 

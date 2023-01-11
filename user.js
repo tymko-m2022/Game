@@ -6,7 +6,8 @@ class User{
         this.current_hp = hp
         this.atack = atack;
         this.displayHP = document.querySelector("#user_hp");
-        
+        this.audioUserDie = new Audio();
+        this.audioUserDie.src = './audio/user-die.mp3';
         
     }
 
@@ -23,8 +24,13 @@ class User{
             this.current_hp -= atack;
             this.displayHP.setAttribute("value", this.current_hp);
             document.querySelector('#user_value_hp').textContent = this.current_hp;
+            document.querySelector('body').style.animationPlayState = 'running';
+            setTimeout(() => {
+                document.querySelector('body').style.animationPlayState = 'paused';
+            }, 150);
             if(this.current_hp <= 0){
                 window.location.reload();
+                this.audioUserDie.play();
             }
         }   
     }
@@ -38,7 +44,6 @@ class User{
     userAtack(minion){
         minion.lossAtack(this.atack);
         
-        // add sword animation
     }
 
     addAtack(atack){

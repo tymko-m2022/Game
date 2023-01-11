@@ -157,7 +157,7 @@ function startGame() {
                clearInterval(Level_2);
             }
          }, 1000)
-      }, 30000)
+      }, 3000)
    }
 
    function lastLevel(){
@@ -178,20 +178,36 @@ function startGame() {
                clearInterval(attack_1);
             }
          }, 10000);
-      
+         let endGame = setInterval(()=>{
+            if(boss.die){
+               overGame();
+               clearInterval(endGame);
+            }
+         }, 1000)
          
-      }, 30000)
+      }, 3000)
    }
 
+   function overGame(){
+      audioOver.play();
+      minions_3.remove();
+      indecators.style.opacity = 0;
+      wrapper.style.background = `url(${bgOverGame.src}) center/contain`;
+      let endBlock = document.createElement('div');
+      endBlock.setAttribute('class', 'endBlock');
+      let p = document.createElement('p');
+      p.innerHTML = `
+      <h2>You win!</h2>
+      <p>You have made ${localStorage.getItem(`gameClick_${current_game}`)} clicks</p> 
+      `;
+      endBlock.appendChild(p);
+      let btnRestart = document.createElement('button');
+      btnRestart.textContent = 'Restart';
+      btnRestart.setAttribute('class', 'btn btn_start');
+      btnRestart.addEventListener('click', () => location.reload());
+      endBlock.appendChild(btnRestart);
+      wrapper.appendChild(endBlock);
+   }
 }
 
-function overGame(){
-   audioOver.play();
-   minions_3.remove();
-   wrapper.style.background = `url(${nextLvl.src}) center/contain`;
-   indecators.style.opacity = 0;
-   setTimeout(()=>{
-      wrapper.style.background = `url(${bgOverGame.src}) center/contain`;
-      indecators.style.opacity = 1;  
-   }, 30000)
-}
+
