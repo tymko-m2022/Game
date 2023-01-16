@@ -3,6 +3,7 @@ body{
     max-width: 1920px;
     animation: hithere .15s ease-in infinite;
     animation-play-state: paused;
+    background-color: rgb(83, 83, 219);
     overflow: hidden;
 }
 
@@ -229,6 +230,7 @@ p{
     max-height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: -1;
 }
 
 .ScoreTable_scores::-webkit-scrollbar {
@@ -247,6 +249,13 @@ p{
   }
 
   .endBlock{
+    position: absolute;
+    inset: auto 0 50px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .lostBlock{
     position: absolute;
     inset: auto 0 50px;
     margin: auto;

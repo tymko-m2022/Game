@@ -40,6 +40,8 @@ const audioLvl_3 = new Audio();
 audioLvl_3.src = './audio/audioLvl_2.mp3';
 const bgLvl_3 = new Image();
 bgLvl_3.src = './img/level3.jpg';
+const bgLostGame = new Image();
+bgLostGame.src = './img/lost-game.jpg';
 const bgOverGame = new Image();
 bgOverGame.src = './img/game-over.jpg';
 const audioOver = new Audio();
@@ -178,15 +180,27 @@ function startGame() {
                clearInterval(attack_1);
             }
          }, 10000);
+
          let endGame = setInterval(()=>{
             if(boss.die){
                overGame();
                clearInterval(endGame);
             }
          }, 1000)
+
+         let lostGame = setInterval(()=>{
+            if(user.die){
+               lostGame();
+               clearInterval(lostGame);
+            }
+         
+         }, 1000)
          
       }, 3000)
+
    }
+   
+   
 
    function overGame(){
       audioOver.play();
@@ -207,6 +221,27 @@ function startGame() {
       btnRestart.addEventListener('click', () => location.reload());
       endBlock.appendChild(btnRestart);
       wrapper.appendChild(endBlock);
+   }
+
+   function lostGame(){
+      audioOver.play();
+      minions_3.remove();
+      indecators.style.opacity = 0;
+      wrapper.style.background = `url(${bgLostGame.src}) center/contain`;
+      let lostBlock = document.createElement('div');
+      lostBlock.setAttribute('class', 'lostBlock');
+      let p = document.createElement('p');
+      p.innerHTML = `
+      <h2>You lost!</h2>
+      <p>You have made ${localStorage.getItem(`gameClick_${current_game}`)} clicks</p> 
+      `;
+      lostBlock.appendChild(p);
+      let btnRestart = document.createElement('button');
+      btnRestart.textContent = 'Restart';
+      btnRestart.setAttribute('class', 'btn btn_start');
+      btnRestart.addEventListener('click', () => location.reload());
+      lostBlock.appendChild(btnRestart);
+      wrapper.appendChild(lostBlock);
    }
 }
 
