@@ -187,14 +187,6 @@ function startGame() {
                clearInterval(endGame);
             }
          }, 1000)
-
-         let lostGame = setInterval(()=>{
-            if(user.die){
-               lostGame();
-               clearInterval(lostGame);
-            }
-         
-         }, 1000)
          
       }, 3000)
 
@@ -203,6 +195,7 @@ function startGame() {
    
 
    function overGame(){
+      document.querySelector('body').style.animation = 'none';
       audioOver.play();
       minions_3.remove();
       indecators.style.opacity = 0;
@@ -223,26 +216,8 @@ function startGame() {
       wrapper.appendChild(endBlock);
    }
 
-   function lostGame(){
-      audioOver.play();
-      minions_3.remove();
-      indecators.style.opacity = 0;
-      wrapper.style.background = `url(${bgLostGame.src}) center/contain`;
-      let lostBlock = document.createElement('div');
-      lostBlock.setAttribute('class', 'lostBlock');
-      let p = document.createElement('p');
-      p.innerHTML = `
-      <h2>You lost!</h2>
-      <p>You have made ${localStorage.getItem(`gameClick_${current_game}`)} clicks</p> 
-      `;
-      lostBlock.appendChild(p);
-      let btnRestart = document.createElement('button');
-      btnRestart.textContent = 'Restart';
-      btnRestart.setAttribute('class', 'btn btn_start');
-      btnRestart.addEventListener('click', () => location.reload());
-      lostBlock.appendChild(btnRestart);
-      wrapper.appendChild(lostBlock);
-   }
+   
 }
+
 
 

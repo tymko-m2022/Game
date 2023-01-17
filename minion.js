@@ -89,9 +89,11 @@ class Minion{
             this.die = true;
             minion.classList.add("die");
             this.audioMinionDie.play();
+           
         }
 
         this.atackUser.play();  
+         
     }
 
 }

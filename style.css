@@ -1,7 +1,7 @@
 body{
     margin: 0 auto;
     max-width: 1920px;
-    animation: hithere .15s ease-in infinite;
+    animation: hithere .3s ease-in infinite;
     animation-play-state: paused;
     background-color: rgb(83, 83, 219);
     overflow: hidden;
@@ -135,7 +135,7 @@ body{
 #minion_Oliver{
     position: relative;
     top: -20px;
-    left: -200px;
+    left: -210px;
 }
 
 #minion_Charley{
@@ -230,7 +230,6 @@ p{
     max-height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
-    z-index: -1;
 }
 
 .ScoreTable_scores::-webkit-scrollbar {
@@ -248,6 +247,86 @@ p{
     border: 3px solid orange;  
   }
 
+  @media screen and (min-width: 320px) and (max-width: 551px){
+    .ScoreTable_scores{
+        width: 100%;
+        max-height: 150px;
+        margin: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .game{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: url('./img/start.jpg');
+        background-size: contain;
+        background-position: center;
+        overflow: hidden;
+    }
+    .minions{
+        width: 100%;
+        height: 100vh;
+        display: none;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #mob_lvl_1{
+        display: flex;
+        max-width: 100%;
+    
+    }
+
+    .minion img{
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        object-position: center;
+
+    }
+
+    #minion_Felix{
+        position: relative;
+        top: 0px;
+        left: 120px;
+    }
+    
+    #minion_Wiki{
+        position: relative;
+        top: 30px;
+        left: 40px;
+        
+    }
+    
+    #minion_Olivia{
+        position: relative;
+        top: 0px;
+        left: -50px;
+    }
+
+    #minion_Charley{
+        position: relative;
+        top: -170px;
+        left: -90px;
+    }
+
+    #minion_Oliver{
+        position: relative;
+        top: 60px;
+        left: 120px;
+    }
+    
+    #minion_Oskar{
+        position: relative;
+        top: 30px;
+        left: 0px;
+        text-align: center;
+    
+    }
+
+  }
+
   .endBlock{
     position: absolute;
     inset: auto 0 50px;
@@ -257,7 +336,9 @@ p{
 
   .lostBlock{
     position: absolute;
-    inset: auto 0 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: auto;
     text-align: center;
   }
